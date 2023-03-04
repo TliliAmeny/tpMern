@@ -3,7 +3,10 @@
 import { InjectRepository } from '@nestjs/typeorm';
 import { AdressRpository } from '../repositories/AdressRepository';
 import { Address } from '../entities/Address';
+import { Injector } from '@nestjs/core/injector/injector';
+import { Injectable } from '@nestjs/common';
 
+@Injectable()
 export class AdressService {
   constructor(private adressRepository: AdressRpository) {}
 

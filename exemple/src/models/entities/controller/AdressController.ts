@@ -2,10 +2,10 @@ import { Body, Controller, Post } from '@nestjs/common';
 import { AdressService } from 'src/models/services/AddressService';
 import { Address } from '../Address';
 
-@Controller()
+@Controller('address')
 export class AdressController {
   constructor(private adSer: AdressService) {}
-  @Post()
+  @Post('newAdress')
   async creatAdress(@Body() adr: Address): Promise<Address> {
     try {
       return this.adSer.createAdress(adr);

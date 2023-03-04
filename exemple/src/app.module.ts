@@ -5,6 +5,9 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { MysqlConfig } from './config/config';
 import { Entities } from './models/entities';
+import { AdressController } from './models/entities/controller/AdressController';
+import { AdressRpository } from './models/repositories/AdressRepository';
+import { AdressService } from './models/services/AddressService';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -14,7 +17,7 @@ import { Entities } from './models/entities';
       autoLoadEntities: true,
     }),
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, AdressController],
+  providers: [AppService, AdressRpository, AdressService],
 })
 export class AppModule {}
